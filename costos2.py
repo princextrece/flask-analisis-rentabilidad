@@ -21,7 +21,7 @@ if not os.path.exists(STATIC_FOLDER):
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # Credenciales de usuario
-USUARIO = "cliente"
+USUARIO = "nicolas"
 PASSWORD = "1234"
 
 # Página de login
