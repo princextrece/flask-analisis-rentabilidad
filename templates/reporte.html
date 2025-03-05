@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte de Rentabilidad</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+        }
+        h1 { color: #000;
+            font-weight: 600;
+            text-align: center;
+        }
+        h2 { margin-top: 10px;
+            text-align: left;
+        }
+        img { margin: 10px 0;
+            border-radius: 8px;
+            width: 100%;
+        }
+        pre {
+            font-size: 12px;
+            margin-bottom: 40px;
+            text-align: left;
+            background: none;
+            padding: 10px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            color: #444;
+        }
+         
+        .btn {
+            display: inline-block;
+            margin: 30px 0;
+            padding: 12px 24px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .color1 { color: #1f77b4; font-weight: bold; } /* Azul */
+        .color2 { color: #ff7f0e; font-weight: bold; } /* Naranja */
+        .color3 { color: #2ca02c; font-weight: bold; } /* Verde */
+        .color4 { color: #d62728; font-weight: bold; } /* Rojo */
+        .color5 { color: #9467bd; font-weight: bold; } /* Morado */
+        .color6 { color: #8c564b; font-weight: bold; } /* Marrón */
+        .color7 { color: #e377c2; font-weight: bold; } /* Rosa */
+        .color8 { color: #7f7f7f; font-weight: bold; } /* Gris */
+        .color9 { color: #d4a017; font-weight: bold; } /* Mostaza */
+        .color10 { color: #17becf; font-weight: bold; } /* Cian */
+        .green-text { color: green; font-weight: bold; }
+        .yellow-text { color: #d4a017; font-weight: bold; }
+        .red-text { color: red; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Reporte de Rentabilidad</h1>
+        
+        <div>
+            <h2>📅 Top 10 Empresas Más Rentables por Semana</h2>
+            <img src="{{ weekly_graph }}" alt="Gráfico semanal">
+            <pre>{{ weekly_text | safe }}</pre>
+        </div>
+        
+        <div>
+            <h2>📆 Top 10 Empresas Más Rentables por Mes</h2>
+            <img src="{{ monthly_graph }}" alt="Gráfico mensual">
+            <pre>{{ monthly_text | safe }}</pre>
+        </div>
+        
+        <div>
+            <h2>📈 Top 10 Empresas Más Rentables del Año</h2>
+            <img src="{{ annual_graph }}" alt="Gráfico anual">
+            <pre>{{ annual_text | safe }}</pre>
+        </div>
+    </div>
+</body>
+</html>
