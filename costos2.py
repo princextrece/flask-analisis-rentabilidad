@@ -87,12 +87,11 @@ def dashboard():
     df.replace([np.inf, -np.inf], np.nan, inplace=True)
     df.interpolate(method="linear", inplace=True)
     
-    # Filtrar fechas para evitar datos de 2025
+# Filtrar fechas para incluir datos hasta 2025 si existen
     df = df[df["Date"].notna()]  # Asegura que no haya valores NaN
-    df = df[df["Date"].dt.year <= 2024]  # Mantiene solo fechas hasta 2024
-# Revisión final para eliminar cualquier fila errónea con fechas de 2025
-    df = df[~(df["Date"].dt.year == 2025)]  
+    df = df[df["Date"].dt.year <= 2025]  # Mantiene solo fechas hasta 2025
     df = df.dropna(subset=["Revenue", "Cost", "Date", "Company"])
+
 
 
     weekly_graph = generate_profitability_graph(df, "W")
